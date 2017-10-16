@@ -1,4 +1,5 @@
 from graphics import *
+
 def main():
 	win = GraphWin("Strayt Giraffe", 800, 800)
 	win.yUp()
