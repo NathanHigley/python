@@ -1,23 +1,16 @@
 from mcpi.minecraft import Minecraft
-from mcpi import*
+from mcpi import *
 
 mc = Minecraft.create()
 air = 0
-stone = 1
-iron = 42
-dirt = 3
-gold = 41
 wood = 5
-leaf = 18
-door = 64
-stonebrick = 98
 water = 8
 
 x, y, z = mc.player.getTilePos()                                                  
 x, y, z = mc.player.getPos()  
 
 def init():
-	mc = Minecraft.create("10.183.13.13", 4711)
+	mc = Minecraft.create()
 	x,y,z = mc.player.getPos()
 	return mc
 	
