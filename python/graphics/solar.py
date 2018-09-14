@@ -1,14 +1,14 @@
 import turtle, random, math
 t = turtle.Turtle(visible=False)
 t.speed(0)
-turtle.screensize(500,500)
+turtle.screensize(800,800)
 myWin = turtle.Screen()
 myWin.bgcolor("black")
 
 def stars(t):
     t.up()
-    x = random.randint(-500,500)
-    y = random.randint(-500,500)
+    x = random.randint(-800,800)
+    y = random.randint(-800,800)
     t.setpos(x, y)
     t.down()
     t.color("black", "white")
@@ -25,8 +25,8 @@ def orbit():
         t.down()
         t.pencolor('black')
         t.begin_fill()
-        t.circle(40)
-        t.fillcolor('#ffe297')
+        t.circle(35)
+        t.fillcolor('yellow')
         t.end_fill()
 
     def get_circle(x,y,size,color):
@@ -43,46 +43,45 @@ def orbit():
         t.up()
         return t
 
-    def move(turtle, origin_offset, deg):
-        x=origin_offset*math.cos(deg)
-        y=origin_offset*math.sin(deg)
-        turtle.goto(x,y)
+    def move(t, offset, deg):
+        x=offset*math.cos(deg)
+        y=offset*math.sin(deg)
+        t.goto(x,y)
 
-    canvas = turtle.Turtle()
-    sun(canvas)
+    sun(turtle.Turtle())
     #(x, y, radius, color)
-    orb1 = get_circle(50,0,0.25,'#c09d96')
-    orb2 = get_circle(100,0,0.5,'#d58b67')
-    orb3 = get_circle(150,0,1,'#5a8a97')
-    orb4 = get_circle(200,0,1,'#ff9559')
-    orb5 = get_circle(250,0,1.2,'#ffb68d')
-    orb6 = get_circle(300,0,1,'#8dd8ff')
-    orb7 = get_circle(350,0,0.15,'#74adcb')
+    orb1 = get_circle(50,0,0.5,'grey')
+    orb2 = get_circle(75,0,0.75,'#d58b67')
+    orb3 = get_circle(100,0,1,'#5a8a97')
+    orb4 = get_circle(150,0,0.9,'#ff9559')
+    orb5 = get_circle(200,0,1.75,'#ffb68d')
+    orb6 = get_circle(250,0,1.5,'#ffe297')
+    orb7 = get_circle(300,0,1.25,'#74adcb')
+    orb8 = get_circle(350,0,1.25,'#74adcb')
     time = 0
-    oneS = twoS = threeS = fourS = fiveS = sixS = sevenS = 0
+    oneS = twoS = threeS = fourS = fiveS = sixS = sevenS = eightS = 0
     while time == 0:
         move(orb1, 50, oneS)
-        move(orb2, 100, twoS)
-        move(orb3, 150, threeS)
-        move(orb4, 200, fourS)
-        move(orb5, 250, fiveS)
-        move(orb6, 300, sixS)
-        move(orb7, 350, sevenS)
-        oneS=oneS+0.01
-        twoS=twoS+0.02
-        threeS=threeS+0.03
-        fourS=fourS+0.04
-        fiveS=fiveS+0.05
-        sixS=sixS+0.06
-        sevenS=sevenS+0.07
-
+        move(orb2, 75, twoS)
+        move(orb3, 100, threeS)
+        move(orb4, 150, fourS)
+        move(orb5, 200, fiveS)
+        move(orb6, 250, sixS)
+        move(orb7, 300, sevenS)
+        move(orb8, 350, eightS)
+        oneS=oneS+0.08
+        twoS=twoS+0.07
+        threeS=threeS+0.06
+        fourS=fourS+0.05
+        fiveS=fiveS+0.04
+        sixS=sixS+0.03
+        sevenS=sevenS+0.02
+        eightS=eightS+0.01
 
 def main():
-    count = 0
-    if count > 100:
-        sount = 0
-    while count < 100:
-        count = count + 1
+    c = 0
+    while c < 100:
+        c = c + 1
         stars(t)
     orbit()
     myWin.exitonclick()
