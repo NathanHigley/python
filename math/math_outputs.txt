@@ -1,0 +1,41 @@
+find_factors.py
+-----
+lune@quebec:~/python/math$ python find_factors.py
+Your number please 25
+1
+5
+25
+-----
+multiplication.py
+-----
+lune@quebec:~/python/math$ python3 multiplication.py
+Enter a number: 5
+5.0 x 1 = 5.0
+
+5.0 x 2 = 10.0
+5.0 x 3 = 15.0
+5.0 x 4 = 20.0
+5.0 x 5 = 25.0
+5.0 x 6 = 30.0
+5.0 x 7 = 35.0
+5.0 x 8 = 40.0
+5.0 x 9 = 45.0
+5.0 x 10 = 50.0
+-----
+convertkmmi.py
+-----
+lune@quebec:~/python/math$ python3 convertkmmi.py
+1. Kilometers to Miles
+2. Miles to Kilometers
+Which conversion would you like to do?: 1
+Enter distance in kilometers: 4
+Distance in miles: 2.4860161591050343
+-----
+quadratic.py
+-----
+lune@quebec:~/python/math$ python quadratic.py
+Enter a: 5
+Enter b: 7
+Enter c: 2
+x1: -0.4
+x2: -1.0
