@@ -13,7 +13,7 @@ def stars(t):
     t.down()
     t.color("black", "white")
     t.begin_fill()
-    t.circle(1)
+    t.circle(random.randint(1,3))
     t.end_fill()
 
 def orbit():
@@ -21,7 +21,7 @@ def orbit():
         t.ht()
         t.speed(0)
         t.up()
-        t.goto(0,-40)
+        t.goto(0,-35)
         t.down()
         t.pencolor('black')
         t.begin_fill()
@@ -40,7 +40,6 @@ def orbit():
         t.shapesize(size,size,None)
         t.color(color)
         t.st()
-        t.up()
         return t
 
     def move(t, offset, deg):
@@ -49,34 +48,44 @@ def orbit():
         t.goto(x,y)
 
     sun(turtle.Turtle())
+    #lateral distance from center
+    x1 = 50
+    x2 = 75
+    x3 = 100
+    x4 = 150
+    x5 = 200
+    x6 = 250
+    x7 = 300
+    x8 = 350
     #(x, y, radius, color)
-    orb1 = get_circle(50,0,0.5,'grey')
-    orb2 = get_circle(75,0,0.75,'#d58b67')
-    orb3 = get_circle(100,0,1,'#5a8a97')
-    orb4 = get_circle(150,0,0.9,'#ff9559')
-    orb5 = get_circle(200,0,1.75,'#ffb68d')
-    orb6 = get_circle(250,0,1.5,'#ffe297')
-    orb7 = get_circle(300,0,1.25,'#74adcb')
-    orb8 = get_circle(350,0,1.25,'#74adcb')
+    orb1 = get_circle(x1,0,0.5,'grey')
+    orb2 = get_circle(x2,0,0.75,'#d58b67')
+    orb3 = get_circle(x3,0,1,'#5a8a97')
+    orb4 = get_circle(x4,0,0.9,'#ff9559')
+    orb5 = get_circle(x5,0,1.75,'#ffb68d')
+    orb6 = get_circle(x6,0,1.5,'#ffe297')
+    orb7 = get_circle(x7,0,1.25,'#74adcb')
+    orb8 = get_circle(x8,0,1.25,'#74adcb')
     time = 0
-    oneS = twoS = threeS = fourS = fiveS = sixS = sevenS = eightS = 0
+    s1 = s2 = s3 = s4 = s5 = s6 = s7 = s8 = 0
     while time == 0:
-        move(orb1, 50, oneS)
-        move(orb2, 75, twoS)
-        move(orb3, 100, threeS)
-        move(orb4, 150, fourS)
-        move(orb5, 200, fiveS)
-        move(orb6, 250, sixS)
-        move(orb7, 300, sevenS)
-        move(orb8, 350, eightS)
-        oneS=oneS+0.08
-        twoS=twoS+0.07
-        threeS=threeS+0.06
-        fourS=fourS+0.05
-        fiveS=fiveS+0.04
-        sixS=sixS+0.03
-        sevenS=sevenS+0.02
-        eightS=eightS+0.01
+        move(orb1, x1, s1)
+        move(orb2, x2, s2)
+        move(orb3, x3, s3)
+        move(orb4, x4, s4)
+        move(orb5, x5, s5)
+        move(orb6, x6, s6)
+        move(orb7, x7, s7)
+        move(orb8, x8, s8)
+        #speed variables
+        s1=s1+0.08
+        s2=s2+0.07
+        s3=s3+0.06
+        s4=s4+0.05
+        s5=s5+0.04
+        s6=s6+0.03
+        s7=s7+0.02
+        s8=s8+0.01
 
 def main():
     c = 0
