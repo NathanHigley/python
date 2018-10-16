@@ -13,7 +13,7 @@ def stars(t):
     t.down()
     t.color("black", "white")
     t.begin_fill()
-    t.circle(random.randint(1,3))
+    t.circle(random.randint(1,2))
     t.end_fill()
 
 def orbit():
