@@ -1,6 +1,5 @@
 def thing():
     import turtle
-    turtle.screensize(600,600)
     turtle.bgcolor("black")
     turt = turtle.Turtle(visible=False)
     turt2 = turtle.Turtle(visible=False)
@@ -10,7 +9,7 @@ def thing():
     turt6 = turtle.Turtle(visible=False)
     turt7 = turtle.Turtle(visible=False)
     turt8 = turtle.Turtle(visible=False)
-    turt.color("White") # ERASE
+    turt.color("White")
     turt2.color("White")
     turt3.color("White")
     turt4.color("White")
@@ -219,8 +218,6 @@ def solar():
         myWin.exitonclick()
 
     main()
-
-
 
 import tkinter as tk
 root = tk.Tk()
