@@ -1,16 +1,16 @@
 from mcpi.minecraft import Minecraft
 
-#MATERIAL
+'''
+MATERIAL
 air = 0
 stone = 1
-wood = 1
-water = 8
 slab = 44
 obs = 49
 ice = 79
 glow = 89
 glowred = 246
 core = 247
+'''
 
 def init():
 	mc = Minecraft.create()
@@ -29,7 +29,8 @@ def sector(mc, x , y, z):
 
 def frame(mc, x, y, z):
 	#create structure
-	mc.setBlocks(x+0, y+0, z+0, x+30, y+30, z+30, stone)
+	mc.setBlocks(x+0, y+0, z+0, x+30, y+30, z+30, 1)
+	
 	#shave corners
 	n = 0
 	while n <= 10:
@@ -139,21 +140,51 @@ def frame(mc, x, y, z):
 		
 		n = n + 1
 		
-	#create mailslot(outline edges with slabs, insides with water)
-	mc.setBlocks(x+12, y+16, z+0, x+18, y+16, z+2, ice)
+	#create mailslot
+	mc.setBlocks(x+10, y+15, z+0, x+20, y+17, z+2, 79)
 	
 def port(mc, x, y, z):
 	#clear area
-	mc.setBlocks(x+7, y+7, z+3, x+23, y+23, z+29, air)
+	mc.setBlocks(x-6, y+8, z+0, x+10, y+23, z+26, 0)
+	
 	#create cylinder
-	#thing
+	mc.setBlocks(x+4, y+8, z+0, x+0, y+8, z+26, 1)
+	
+	mc.setBlocks(x-2, y+9, z+0, x-1, y+9, z+26, 1)
+	mc.setBlocks(x+5, y+9, z+0, x+6, y+9, z+26, 1)
+	
+	mc.setBlocks(x-4, y+10, z+0, x-3, y+10, z+26, 1)
+	mc.setBlocks(x+8, y+10, z+0, x+7, y+10, z+26, 1)
+	
+	mc.setBlocks(x-4, y+11, z+0, x-4, y+1, z+26, 1)
+	mc.setBlocks(x+8, y+11, z+0, x+8, y+1, z+26, 1)
+	
+	mc.setBlocks(x-5, y+13, z+0, x-5, y+12, z+26, 1)
+	mc.setBlocks(x+9, y+13, z+0, x+9, y+12, z+26, 1)
+	
+	mc.setBlocks(x-6, y+14, z+0, x-6, y+18, z+26, 1)
+	mc.setBlocks(x+10, y+14, z+0, x+10, y+18, z+26, 1)
+	
+	mc.setBlocks(x-5, y+19, z+0, x-5, y+20, z+26, 1)
+	mc.setBlocks(x+9, y+19, z+0, x+9, y+20, z+26, 1)
+	
+	mc.setBlocks(x-4, y+21, z+0, x-4, y+22, z+26, 1)
+	mc.setBlocks(x+8, y+21, z+0, x+8, y+22, z+26, 1)
+	
+	mc.setBlocks(x-3, y+22, z+0, x-3, y+22, z+26, 1)
+	mc.setBlocks(x+7, y+22, z+0, x+7, y+22, z+26, 1)
+	
+	mc.setBlocks(x-2, y+23, z+0, x-1, y+23, z+26, 1)
+	mc.setBlocks(x+6, y+23, z+0, x+5, y+23, z+26, 1)
+	
+	mc.setBlocks(x+4, y+24, z+0, x+0, y+24, z+26, 1)
         
-def coriolis():
+def main():
 	mc = init()
 	x, y, z = mc.player.getPos()
 	mc.player.setPos(70,30,70)
 	sector(mc, 50, -15, 50)
-	#frame(mc, 75, 20, 75)
-	#port(mc, 75, 20, 75)
+	frame(mc, 75, 20, 75)
+	port(mc, 88, 20, 78)
 
-coriolis()
+main()
